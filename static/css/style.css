@@ -1,0 +1,311 @@
+/* ================================================================
+   Dr. Andrzej P. Kądzielawa — Academic GitHub Pages Site
+   Replica stylesheet — shared across all pages
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sidebar-bg:      #2d2d2d;
+  --sidebar-text:    #d4d4d4;
+  --sidebar-link:    #b8b8b8;
+  --sidebar-hover:   #ffffff;
+  --sidebar-active-bg: rgba(255,255,255,0.12);
+  --accent:          #888888;
+  --divider:         #444444;
+  --body-bg:         #f5f5f5;
+  --content-bg:      #ffffff;
+  --text:            #333333;
+  --text-light:      #666666;
+  --link:            #555555;
+  --link-hover:      #000000;
+  --heading:         #2d2d2d;
+  --border:          #e0e0e0;
+  --tag-bg:          #efefef;
+  --tag-text:        #555555;
+  --sidebar-width:   260px;
+  --content-max:     760px;
+}
+
+/* ── Body layout ─────────────────────────────────────────────── */
+body {
+  font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.75;
+  background: var(--body-bg);
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 30px 22px;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.sidebar-logo {
+  display: block;
+  text-align: center;
+  margin-bottom: 18px;
+  text-decoration: none;
+}
+.sidebar-logo img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  background: #555;
+}
+
+.sidebar-name {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.sidebar-tagline {
+  font-size: 0.77rem;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.sidebar-links {
+  list-style: none;
+  margin-bottom: 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.sidebar-links a {
+  color: var(--sidebar-link);
+  text-decoration: none;
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.18s;
+}
+.sidebar-links a:hover { color: var(--sidebar-hover); }
+.sidebar-links svg   { flex-shrink: 0; }
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 14px 0;
+}
+
+.sidebar-nav-label {
+  font-size: 0.71rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+}
+.sidebar-nav li { margin-bottom: 2px; }
+.sidebar-nav a {
+  display: block;
+  color: var(--sidebar-link);
+  text-decoration: none;
+  font-size: 0.88rem;
+  padding: 5px 8px;
+  border-radius: 3px;
+  transition: background 0.15s, color 0.15s;
+}
+.sidebar-nav a:hover        { color: #fff; background: rgba(255,255,255,0.07); }
+.sidebar-nav a.active       { color: #fff; background: var(--sidebar-active-bg); font-weight: 400; }
+
+/* ── Main wrapper ────────────────────────────────────────────── */
+.main {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--content-bg);
+}
+
+/* ── Content area ────────────────────────────────────────────── */
+.content {
+  max-width: var(--content-max);
+  padding: 46px 48px 40px;
+  flex: 1;
+}
+
+.page-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 10px;
+}
+.page-divider {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 12px 0 26px;
+}
+
+.content p  { margin-bottom: 16px; font-size: 0.97rem; }
+.content em { font-style: italic; }
+.content strong { font-weight: 600; }
+
+.content a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  text-underline-offset: 2px;
+  transition: color 0.18s, text-decoration-color 0.18s;
+}
+.content a:hover { color: var(--link-hover); text-decoration-color: #888; }
+
+/* ── CV / Article / Project cards ───────────────────────────── */
+.card {
+  margin-bottom: 0;
+}
+.card-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 6px;
+}
+.card-title a {
+  color: var(--heading);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.card-title a:hover { color: #000; text-decoration: underline; text-decoration-color: #aaa; }
+
+.card-meta {
+  font-size: 0.83rem;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.tag {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.tag:hover { background: #ddd; }
+
+.card-view-link {
+  display: inline-block;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #555;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  padding: 3px 10px;
+  border-radius: 3px;
+  transition: background 0.15s, color 0.15s;
+  margin-bottom: 4px;
+}
+.card-view-link:hover { background: #f0f0f0; color: #000; }
+
+.card-hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 20px 0;
+}
+
+/* ── Tag filter bar ──────────────────────────────────────────── */
+.tag-cloud {
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* ── Teaching table ──────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; margin-bottom: 20px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+th {
+  background: #f0f0f0;
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #555;
+}
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #fafafa; }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer {
+  padding: 16px 48px;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  border-top: 1px solid var(--border);
+  background: var(--body-bg);
+}
+footer a { color: #777; text-decoration: none; }
+footer a:hover { color: #333; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  .sidebar {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    padding: 22px 20px;
+  }
+  .main { margin-left: 0; }
+  .content { padding: 28px 22px 30px; }
+  footer { padding: 14px 22px; }
+}
