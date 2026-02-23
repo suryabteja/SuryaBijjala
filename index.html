@@ -106,6 +106,21 @@
       box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
       border-color: #d4d4d4;
     }
+
+    /* Custom Scrollbar for internal scrolling blocks */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #e5e5e5;
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background-color: #d4d4d4;
+    }
   </style>
 </head>
 <body class="bg-neutral-50 text-neutral-800 antialiased min-h-screen flex flex-col lg:flex-row selection:bg-neutral-200 selection:text-neutral-900">
@@ -185,17 +200,44 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
-          <div class="content-card bg-white p-8 rounded-lg border border-neutral-200 shadow-sm flex flex-col">
-            <h3 class="text-sm font-sans tracking-[0.1em] text-neutral-900 mb-3 uppercase font-semibold">Software Contributions</h3>
-            <p class="text-base text-neutral-600 leading-relaxed flex-1 m-0">
-              Co-author of the high-performance computational library <em><a href="https://bitbucket.org/azja/qmt/src/master/" target="_blank" rel="noopener" class="content-link font-medium">Quantum Metallization Tools (qmt)</a></em> and author of the DFT-to-Heisenberg mapping framework <em><a href="https://github.com/Mellechowicz/JorG" target="_blank" rel="noopener" class="content-link font-medium">JorGpi</a></em>.
-            </p>
+          <!-- Computational Projects Card -->
+          <div class="bg-white p-6 lg:p-8 rounded-lg border border-neutral-200 shadow-sm flex flex-col h-[26rem]">
+            <h3 class="text-sm font-sans tracking-[0.1em] text-neutral-900 mb-4 uppercase font-semibold shrink-0">Computational Projects</h3>
+            <div class="flex flex-col gap-3 flex-1 overflow-y-auto custom-scrollbar pr-2 pb-2">
+              <a href="computational/index.html" class="content-card group block p-4 rounded-md border border-neutral-100 bg-neutral-50 hover:bg-white transition-all no-underline shrink-0">
+                <h4 class="text-base font-medium text-neutral-800 group-hover:text-black mb-1">Quantum Metallization Tools</h4>
+                <p class="text-sm text-neutral-500 m-0 leading-relaxed font-normal">High-performance computational library (qmt)</p>
+              </a>
+              <a href="computational/index.html" class="content-card group block p-4 rounded-md border border-neutral-100 bg-neutral-50 hover:bg-white transition-all no-underline shrink-0">
+                <h4 class="text-base font-medium text-neutral-800 group-hover:text-black mb-1">JorGpi Framework</h4>
+                <p class="text-sm text-neutral-500 m-0 leading-relaxed font-normal">DFT-to-Heisenberg mapping framework</p>
+              </a>
+              <!-- Example of 3rd item to demonstrate scrolling if more are added -->
+              <a href="computational/index.html" class="content-card group block p-4 rounded-md border border-neutral-100 bg-neutral-50 hover:bg-white transition-all no-underline shrink-0">
+                <h4 class="text-base font-medium text-neutral-800 group-hover:text-black mb-1">Attention-Based ML</h4>
+                <p class="text-sm text-neutral-500 m-0 leading-relaxed font-normal">Machine learning models for structural alloys</p>
+              </a>
+            </div>
           </div>
-          <div class="content-card bg-white p-8 rounded-lg border border-neutral-200 shadow-sm flex flex-col">
-            <h3 class="text-sm font-sans tracking-[0.1em] text-neutral-900 mb-3 uppercase font-semibold">Leadership</h3>
-            <p class="text-base text-neutral-600 leading-relaxed flex-1 m-0">
-              Served as Principal Investigator (2020&ndash;2022) for the <a href="https://gacr.cz/file-download/45672" target="_blank" rel="noopener" class="content-link font-medium">GAČR standard grant</a> focusing on the thermal stability of W-Cr based alloys for fusion applications.
-            </p>
+
+          <!-- Experimental Projects Card -->
+          <div class="bg-white p-6 lg:p-8 rounded-lg border border-neutral-200 shadow-sm flex flex-col h-[26rem]">
+            <h3 class="text-sm font-sans tracking-[0.1em] text-neutral-900 mb-4 uppercase font-semibold shrink-0">Experimental Projects</h3>
+            <div class="flex flex-col gap-3 flex-1 overflow-y-auto custom-scrollbar pr-2 pb-2">
+              <a href="projects/index.html" class="content-card group block p-4 rounded-md border border-neutral-100 bg-neutral-50 hover:bg-white transition-all no-underline shrink-0">
+                <h4 class="text-base font-medium text-neutral-800 group-hover:text-black mb-1">W-Cr Based Alloys</h4>
+                <p class="text-sm text-neutral-500 m-0 leading-relaxed font-normal">Tailoring thermal stability for fusion applications</p>
+              </a>
+              <a href="projects/index.html" class="content-card group block p-4 rounded-md border border-neutral-100 bg-neutral-50 hover:bg-white transition-all no-underline shrink-0">
+                <h4 class="text-base font-medium text-neutral-800 group-hover:text-black mb-1">Advanced Manufacturing</h4>
+                <p class="text-sm text-neutral-500 m-0 leading-relaxed font-normal">Powder metallurgy &amp; Gas Tungsten Arc Melting</p>
+              </a>
+              <!-- Example of 3rd item to demonstrate scrolling -->
+              <a href="projects/index.html" class="content-card group block p-4 rounded-md border border-neutral-100 bg-neutral-50 hover:bg-white transition-all no-underline shrink-0">
+                <h4 class="text-base font-medium text-neutral-800 group-hover:text-black mb-1">Microstructural Analysis</h4>
+                <p class="text-sm text-neutral-500 m-0 leading-relaxed font-normal">Characterization of refractory alloys</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
